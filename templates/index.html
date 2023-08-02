@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MQTT Message Receiver</title>
+</head>
+<body>
+    <script>
+        const eventSource = new EventSource('/stream');
+        eventSource.onmessage = function(event) {
+            document.getElementById('message').innerText = event.data;
+        };
+    </script>
+    <h1>Received MQTT Message:</h1>
+    <div id="message"></div>
+</body>
+</html>
